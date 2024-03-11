@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  update-status-service:
+    image: 9burhan/update-status:latest
+    container_name: update-status-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app
