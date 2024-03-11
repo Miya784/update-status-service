@@ -39,4 +39,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: 9burhan/update-status:latest, 9burhan/update-status:${{ env.GIT_TAG }}
+          tags: 9burhan/update-status:latest, 9burhan/update-status:${{ steps.commit.outputs.short }}
