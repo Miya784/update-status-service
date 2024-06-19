@@ -1,3 +1,4 @@
+// utils/strip.go
 package utils
 
 import "strings"

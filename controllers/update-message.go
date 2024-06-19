@@ -1,3 +1,4 @@
+// controllers/update-message.go
 package controllers
 
 import (
@@ -44,6 +45,7 @@ func MessageUpdateStatus(message []byte) error {
 		}
 
 	} else if strings.Contains(string(message), "Fan") {
+
 		var body UpdateStatusFan
 		err := json.Unmarshal(message, &body)
 		if err != nil {
@@ -62,6 +64,7 @@ func MessageUpdateStatus(message []byte) error {
 		log.Println(body)
 		initials.DB.Exec("UPDATE \"Client\" SET status = $1 WHERE client = $2", body.Gate, body.Client)
 	} else if strings.Contains(string(message), "PWM") {
+
 		var body UpdateStatusPWM
 		err := json.Unmarshal(message, &body)
 		if err != nil {

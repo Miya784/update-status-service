@@ -1,3 +1,4 @@
+// initials/db.go
 package initials
 
 import (
